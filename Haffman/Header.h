@@ -59,7 +59,7 @@ string getCodedString(map<char, string> codes, string text) {
 	return res;
 }
 
-string decodeHuffman(string codedString, map<char, string> codes) {
+string getUncodedString(map<char, string> codes, string codedString) {
 	string res;
 	string substr = "";
 	for (int i = 0; i < codedString.size(); i++) {
@@ -89,4 +89,18 @@ void work() {
 
 	string res = getCodedString(codes, text);
 	cout << res << endl;
+}
+
+string GetText() {
+	std::string line;
+	std::string text;
+
+	while (getline(std::cin, line)) {
+		if (line == "")
+			break;
+		text += '\n';
+		text += line;
+	}
+	text.erase(0, 1);
+	return text;
 }
